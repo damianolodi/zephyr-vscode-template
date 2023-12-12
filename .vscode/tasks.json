@@ -1,0 +1,76 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        /**********************************************************************
+         * WEST tasks *********************************************************
+         **********************************************************************/
+        {
+            "type": "shell",
+            "label": "Build (West)",
+            "command": "west build --build-dir ${command:cmake.buildDirectory}",
+            "detail": "Build the project using west.",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Flash (West)",
+            "command": "west flash --build-dir ${command:cmake.buildDirectory}",
+            "detail": "Flash the current build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Debug (West)",
+            "command": "west debug --build-dir ${command:cmake.buildDirectory}",
+            "detail": "Debug the current build",
+            "problemMatcher": []
+        },
+        /**********************************************************************
+         * CMAKE tasks ********************************************************
+         **********************************************************************/
+        {
+            "type": "cmake",
+            "label": "Build (CMake)",
+            "command": "build",
+            "targets": [
+                "${command:cmake.buildTargetName}"
+            ],
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "group": "build",
+            "detail": "CMake default build task."
+        },
+        {
+            "type": "cmake",
+            "label": "Clean (CMake)",
+            "command": "clean",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "problemMatcher": [],
+            "detail": "CMake clean task."
+        },
+        {
+            "type": "cmake",
+            "label": "Configure (CMake)",
+            "command": "configure",
+            "preset": "${command:cmake.activeConfigurePresetName}",
+            "problemMatcher": [],
+            "detail": "CMake configure task."
+        },
+        {
+            "type": "shell",
+            "label": "Pristine (CMake)",
+            "command": "rm -rf ${command:cmake.buildDirectory}",
+            "detail": "Delete the build directory.",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Generate Documentation (CMake)",
+            "command": "cmake --build ${command:cmake.buildDirectory} --target docs",
+            "detail": "Generate the documentation using Doxygen.",
+            "problemMatcher": []
+        }
+    ]
+}

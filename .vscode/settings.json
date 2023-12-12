@@ -1,0 +1,59 @@
+{
+    // Editor -----------------------------------------------------------------
+    "editor.formatOnSave": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    // C/C++ ------------------------------------------------------------------
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 120, AllowShortIfStatementsOnASingleLine: false}",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.exclude": {
+        "**/build": true
+    },
+    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    // CMake ------------------------------------------------------------------
+    "cmake.allowCommentsInPresetsFile": true,
+    "cmake.buildBeforeRun": true,
+    "cmake.buildDirectory": "${command:cmake.buildDirectory}",
+    "cmake.buildTask": true,
+    "cmake.clearOutputBeforeBuild": false,
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.enabledOutputParsers": [
+        "cmake",
+        "gcc",
+    ],
+    "cmake.options.advanced": {
+        "build": {
+            "statusBarVisibility": "visible"
+        },
+        "launch": {
+            "statusBarVisibility": "hidden"
+        },
+        "debug": {
+            "statusBarVisibility": "hidden"
+        }
+    },
+    "cmake.options.statusBarVisibility": "compact",
+    "cmake.parallelJobs": 0,
+    "cmake.useCMakePresets": "always",
+    // Doxygen ------------------------------------------------------------------
+    "doxdocgen.generic.authorTag": "@author {author}",
+    "doxdocgen.generic.authorName": "Damiano Lodi",
+    "doxdocgen.generic.boolReturnsTrueFalse": false,
+    "doxdocgen.file.versionTag": "@version 0.1",
+    // Files Watcher ------------------------------------------------------------------
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        "**/build/**": true
+    }
+}

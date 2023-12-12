@@ -1,0 +1,177 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common",
+            "displayName": "Common",
+            "description": "Configurations that are common to all Linux presets.",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            },
+            "generator": "Ninja",
+            "hidden": true
+        },
+        /***************
+         * nRF52840 DK *
+         ***************/
+        {
+            "name": "nrf52840dk",
+            "displayName": "nRF52840 DK",
+            "description": "Configuration for board nRF52840 DK",
+            "inherits": "common",
+            "hidden": true,
+            "cacheVariables": {
+                "BOARD": "nrf52840dk_nrf52840"
+            },
+            "environment": {
+                "CORTEX_DEBUG_DEVICE": "nRF52840_xxAA"
+            }
+        },
+        {
+            "name": "release-nrf52840dk",
+            "displayName": "nRF52840 DK - Release",
+            "description": "Release build for nRF52840 DK board.",
+            "inherits": "nrf52840dk",
+            "binaryDir": "${sourceDir}/build/nrf52840dk/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "debug-nrf52840dk",
+            "displayName": "nRF52840 DK - Debug",
+            "description": "Debug build for nRF52840 DK board.",
+            "inherits": "nrf52840dk",
+            "binaryDir": "${sourceDir}/build/nrf52840dk/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        /*************
+         * Thingy:52 *
+         *************/
+        {
+            "name": "thingy52",
+            "displayName": "Thingy:52",
+            "description": "Configuration for Thingy:52 board.",
+            "inherits": "common",
+            "hidden": true,
+            "cacheVariables": {
+                "BOARD": "thingy52_nrf52832"
+            },
+            "environment": {
+                "CORTEX_DEBUG_DEVICE": "nRF52832_xxAA"
+            }
+        },
+        {
+            "name": "release-thingy52",
+            "displayName": "Thingy:52 - Release",
+            "description": "Release build for Thingy:52 board.",
+            "inherits": "thingy52",
+            "binaryDir": "${sourceDir}/build/thingy52/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "debug-thingy52",
+            "displayName": "Thingy:52 - Debug",
+            "description": "Debug build for Thingy:52 board.",
+            "inherits": "thingy52",
+            "binaryDir": "${sourceDir}/build/thingy52/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        /**************************
+         * Nordic nRF52840 Dongle *
+         **************************/
+        {
+            "name": "nrf52840-dongle",
+            "displayName": "Nordic Semiconductor nRF52840 Dongle",
+            "description": "Configuration for Nordic Semiconductor nRF52840 Dongle.",
+            "inherits": "common",
+            "hidden": true,
+            "cacheVariables": {
+                "BOARD": "nrf52840dongle_nrf52840"
+            },
+            "environment": {
+                "CORTEX_DEBUG_DEVICE": "nRF52840_xxAA"
+            }
+        },
+        {
+            "name": "release-nrf52840-dongle",
+            "displayName": "nRF52840 Dongle - Release",
+            "description": "Release build for Nordic Semiconductor nRF52840 Dongle.",
+            "inherits": "nrf52840-dongle",
+            "binaryDir": "${sourceDir}/build/nrf52840_dongle/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "debug-nrf52840-dongle",
+            "displayName": "nRF52840 Dongle - Debug",
+            "description": "Debug build for Nordic Semiconductor nRF52840 Dongle.",
+            "inherits": "nrf52840-dongle",
+            "binaryDir": "${sourceDir}/build/nrf52840_dongle/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        /***************
+         * nRF52840 DK *
+         ***************/
+        {
+            "name": "release-nrf52840",
+            "description": "Release build for nRF52840 DK board.",
+            "displayName": "nRF52840 DK - Release",
+            "configurePreset": "release-nrf52840dk"
+        },
+        {
+            "name": "debug",
+            "description": "Debug build for nRF52840 DK board.",
+            "displayName": "nRF52840 DK - Debug",
+            "configurePreset": "debug-nrf52840dk"
+        },
+        /*************
+         * Thingy:52 *
+         *************/
+        {
+            "name": "release-thingy52",
+            "description": "Release build for Thingy:52 board.",
+            "displayName": "Thingy:52 - Release",
+            "configurePreset": "release-thingy52"
+        },
+        {
+            "name": "debug-thingy52",
+            "description": "Debug build for Thingy:52 board.",
+            "displayName": "Thingy:52 - Debug",
+            "configurePreset": "debug-thingy52"
+        },
+        /**************************
+         * Nordic nRF52840 Dongle *
+         **************************/
+        {
+            "name": "release-nrf52840-dongle",
+            "description": "Release build for Nordic Semiconductor nRF52840 Dongle.",
+            "displayName": "nRF52840 Dongle - Release",
+            "configurePreset": "release-nrf52840-dongle"
+        },
+        {
+            "name": "debug-nrf52840-dongle",
+            "description": "Debug build for Nordic Semiconductor nRF52840 Dongle board.",
+            "displayName": "nRF52840 Dongle - Debug",
+            "configurePreset": "debug--nrf52840-dongle"
+        }
+    ]
+}

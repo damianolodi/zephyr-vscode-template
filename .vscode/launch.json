@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (JLink)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            // "interface": "swd",
+            // "device": "${env:CORTEX_DEBUG_DEVICE}",
+            "device": "nRF52840_xxAA",
+            "rtos": "Zephyr",
+            "cwd": "${workspaceFolder}",
+            "executable": "${command:cmake.buildDirectory}/zephyr/zephyr.elf",
+            "runToEntryPoint": "main",
+            "gdbPath": "/usr/local/lib/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "preLaunchTask": "Flash (West)"
+        }
+    ]
+}

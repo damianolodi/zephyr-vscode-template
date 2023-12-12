@@ -1,0 +1,47 @@
+{
+    "Header Guard": {
+        "prefix": [
+            "header-guard"
+        ],
+        "body": [
+            "#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+            "#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+            "",
+            "$0",
+            "",
+            "#endif"
+            ""
+        ],
+        "description": "Header guard."
+    },
+    "For Loop with Index i" : {
+        "prefix": [
+            "fori"
+        ],
+        "body": [
+            "for (size_t i = 0; i < $0; i++) {",
+            "}"
+        ],
+        "description": "For loop using i variable."
+    },
+    "For Loop with Index j" : {
+        "prefix": [
+            "forj"
+        ],
+        "body": [
+            "for (size_t j = 0; j < $0; j++) {",
+            "}"
+        ],
+        "description": "For loop using j variable."
+    },
+    "For Loop with Index k" : {
+        "prefix": [
+            "fork"
+        ],
+        "body": [
+            "for (size_t k = 0; k < $0; k++) {",
+            "}"
+        ],
+        "description": "For loop using k variable."
+    }
+}

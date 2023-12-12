@@ -1,0 +1,23 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+	/*********************************************************************************************/
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"ms-vscode.cpptools", // C/C++
+		"cschlosser.doxdocgen", // Doxygen documentation generator
+		"ms-vscode.vscode-embedded-tools", // RTOS data viewer
+		"ms-python.python", // Python
+		"donjayamanne.python-environment-manager", // Managing Python virtual environments
+		"ms-vscode.cmake-tools", // CMake
+		"twxs.cmake", // CMake (color and completion)
+		"marus25.cortex-debug", // Debugging for embedded devices
+		"nordic-semiconductor.nrf-devicetree", // DeviceTree support
+		"nordic-semiconductor.nrf-kconfig", // Kconfg support
+		"ms-vscode.vscode-serial-monitor", // Serial monitor
+		"redhat.vscode-yaml" // YAML support
+	],
+	/*********************************************************************************************/
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": []
+}
