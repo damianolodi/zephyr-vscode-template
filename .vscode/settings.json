@@ -1,0 +1,101 @@
+{
+    // EDITOR -----------------------------------------------------------------
+    "editor.formatOnSave": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.tabSize": 4,
+    // C/C++ ------------------------------------------------------------------
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 120, AllowShortIfStatementsOnASingleLine: false}",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy",
+    "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+    "C_Cpp.codeAnalysis.exclude": {
+        "**/.cache/**": true,
+        "**/build/**": true
+    },
+    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.intelliSenseEngine": "default",
+    // CMAKE ------------------------------------------------------------------
+    "cmake.allowCommentsInPresetsFile": false,
+    "cmake.automaticReconfigure": false,
+    "cmake.buildBeforeRun": true,
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.generator": "Ninja",
+    "cmake.options.statusBarVisibility": "compact",
+    "cmake.parallelJobs": 1, // Build parallelism is managed in presets
+    "cmake.parseBuildDiagnostics": true,
+    "cmake.saveBeforeBuild": true,
+    "cmake.useCMakePresets": "always",
+    "[cmake]": {
+        "editor.tabSize": 2,
+    },
+    // DOXYGEN ----------------------------------------------------------------
+    "doxdocgen.generic.authorTag": "@author {author}",
+    "doxdocgen.generic.authorName": "Damiano Lodi",
+    "doxdocgen.file.versionTag": "@version 0.0.1",
+    "doxdocgen.c.factoryMethodText": "Creates a {name} object",
+    "doxdocgen.c.getterText": "Returns the {name}",
+    "doxdocgen.c.setterText": "Sets a new {name}",
+    "doxdocgen.cpp.ctorText": "Creates a new {name} object",
+    "doxdocgen.generic.boolReturnsTrueFalse": false,
+    // FILES WATCHER ----------------------------------------------------------
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        "**/build/**": true
+    },
+    // PYTHON -----------------------------------------------------------------
+    "black-formatter.args": [
+        "--line-length",
+        "120"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter", // format using installed package
+        "editor.formatOnType": false,
+        "editor.formatOnSave": true,
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.extraPaths": [],
+    // CSPELL -----------------------------------------------------------------
+    "cSpell.words": [
+        "msvc",
+        "toolset",
+        "typer",
+        "XPACK",
+        "xsimd"
+    ],
+    "files.associations": {
+        "array": "cpp",
+        "any": "cpp",
+        "string_view": "cpp",
+        "span": "cpp",
+        "regex": "cpp",
+        "type_traits": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "bitset": "cpp",
+        "typeinfo": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "stdexcept": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp"
+    },
+}
