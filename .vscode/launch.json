@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Zephyr) Launch",
+            "type": "cortex-debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${command:cmake.buildDirectory}/zephyr/zephyr.elf", // resolved by CMake Tools
+            "request": "launch",
+            "runToEntryPoint": "main",
+            "device": "nRF52840_xxAA",
+            "servertype": "jlink",
+            "rtos": "Zephyr",
+            "interface": "swd",
+            "gdbPath": "${userHome}/.zephyrtools/toolchain/zephyr-sdk-0.15.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "preLaunchTask": "Flash (CMake)"
+        }
+    ]
+}
