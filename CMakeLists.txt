@@ -16,8 +16,6 @@ project(zephyr-template
 	LANGUAGES C CXX
 )
 
-target_sources(app
-	PRIVATE
-		src/main.c 
-)
+include(BuildTargets)
 
+add_subdirectory(src)
