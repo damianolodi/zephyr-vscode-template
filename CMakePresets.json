@@ -1,0 +1,115 @@
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "conf-common",
+            "description": "Settings common to all configurations.",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/build/install/${presetName}",
+            "cacheVariables": {
+                "BUILD_SHARED_LIBS": "OFF",
+                "BUILD_WITH_CLANG_TIDY_ANALYSIS": "OFF",
+                "CMAKE_MODULE_PATH": "${sourceDir}/cmake",
+                "CMAKE_POSITION_INDEPENDENT_CODE": "ON",
+                "CPM_SOURCE_CACHE": "${sourceDir}/.cache",
+                "ENABLE_PEDANTIC": "ON",
+                "ENABLE_PEDANTIC_ERROR": "OFF",
+                "MYPROJECTVAR_TESTING_IS_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "unix-common",
+            "description": "Linux/macOS common settings.",
+            "hidden": true,
+            "inherits": "conf-common",
+            "generator": "Ninja",
+            "condition": {
+                "type": "inList",
+                "string": "${hostSystemName}",
+                "list": [
+                    "Linux",
+                    "Darwin"
+                ]
+            },
+            "cacheVariables": {
+                "USE_SANITIZER": "",
+                "XPACK_GLOBAL_DIR": "$env{HOME}/.local/xPacks"
+            }
+        },
+        {
+            "name": "nrf52840dk-common",
+            "displayName": "nRF52840DK",
+            "description": "Common configuration for the nRF52840-DK board.",
+            "hidden": true,
+            "inherits": "unix-common",
+            "cacheVariables": {
+                "BOARD": "nrf52840dk/nrf52840"
+            },
+            "environment": {
+                "CORTEX_DEBUG_DEVICE": "nRF52840_xxAA"
+            }
+        },
+        {
+            "name": "nrf52840dk-debug",
+            "displayName": "nRF52840DK Debug",
+            "description": "Debug configuration for the nRF52840-DK board.",
+            "inherits": "nrf52840dk-common",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CONF_FILE": "conf/debug.conf"
+            }
+        },
+        {
+            "name": "nrf52840dk-release",
+            "displayName": "nRF52840DK Release",
+            "description": "Release configuration for the nRF52840-DK board.",
+            "inherits": "nrf52840dk-common",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CONF_FILE": "conf/prj.conf"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "nrf52840dk-release",
+            "displayName": "Release",
+            "configurePreset": "nrf52840dk-release"
+        },
+        {
+            "name": "nrf52840dk-debug",
+            "displayName": "Debug",
+            "configurePreset": "nrf52840dk-debug"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "output": {
+                "debug": false,
+                "outputOnFailure": true,
+                "shortProgress": false
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": false
+            }
+        },
+        {
+            "name": "nrf52840dk-release",
+            "displayName": "Release",
+            "inherits": "default",
+            "configurePreset": "nrf52840dk-release",
+            "configuration": "Release"
+        },
+        {
+            "name": "nrf52840dk-debug",
+            "displayName": "Debug",
+            "inherits": "default",
+            "configurePreset": "nrf52840dk-debug",
+            "configuration": "Debug"
+        }
+    ]
+}
