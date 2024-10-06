@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cmake",
+            "label": "Configure project (CMake)",
+            "command": "configure",
+            "preset": "${command:cmake.activeConfigurePresetName}",
+            "problemMatcher": [],
+            "detail": "CMake configure task."
+        },
+        {
+            "type": "cmake",
+            "label": "Build project (CMake)",
+            "command": "build",
+            "targets": [
+                "${command:cmake.buildTargetName}"
+            ],
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "CMake default build task."
+        },
+        {
+            "type": "cmake",
+            "label": "Install (CMake)",
+            "command": "install",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "problemMatcher": [],
+            "detail": "CMake install task.",
+            "dependsOrder": "sequence",
+            "dependsOn": []
+        },
+        {
+            "type": "cmake",
+            "label": "Clean (CMake)",
+            "command": "clean",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "problemMatcher": [],
+            "detail": "CMake clean task."
+        },
+        {
+            "type": "shell",
+            "label": "Package (CMake)",
+            "command": "cmake --build --preset ${command:cmake.activeBuildPresetName} --target package",
+            "detail": "Install library and create zip archive.",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Package Source (CMake)",
+            "command": "cmake --build --preset ${command:cmake.activeBuildPresetName} --target package_source",
+            "detail": "Install library and create zip archive.",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Flash (CMake)",
+            "command": "cmake --build ${command:cmake.buildDirectory} --target flash",
+            "detail": "Flash the target board.",
+            "problemMatcher": []
+        },
+    ]
+}
