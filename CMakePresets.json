@@ -9,13 +9,8 @@
             "installDir": "${sourceDir}/build/install/${presetName}",
             "cacheVariables": {
                 "BUILD_SHARED_LIBS": "OFF",
-                "BUILD_WITH_CLANG_TIDY_ANALYSIS": "OFF",
                 "CMAKE_MODULE_PATH": "${sourceDir}/cmake",
-                "CMAKE_POSITION_INDEPENDENT_CODE": "ON",
-                "CPM_SOURCE_CACHE": "${sourceDir}/.cache",
-                "ENABLE_PEDANTIC": "ON",
-                "ENABLE_PEDANTIC_ERROR": "OFF",
-                "MYPROJECTVAR_TESTING_IS_ENABLED": "OFF"
+                "CMAKE_POSITION_INDEPENDENT_CODE": "ON"
             }
         },
         {
