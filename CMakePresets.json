@@ -57,6 +57,36 @@
             "cacheVariables": {
                 "FILE_SUFFIX": "release"
             }
+        },
+        {
+            "name": "thingy52-nrf52832-common",
+            "description": "Common configuration for the Thingy52 board.",
+            "hidden": true,
+            "inherits": "unix-common",
+            "cacheVariables": {
+                "BOARD": "thingy52/nrf52832"
+            },
+            "environment": {
+                "CORTEX_DEBUG_DEVICE": "nRF52832_xxAA"
+            }
+        },
+        {
+            "name": "thingy52-nrf52832-debug",
+            "displayName": "Thingy52 Debug",
+            "description": "Debug configuration for the Thingy52 board.",
+            "inherits": "thingy52-nrf52832-common",
+            "cacheVariables": {
+                "FILE_SUFFIX": "debug"
+            }
+        },
+        {
+            "name": "thingy52-nrf52832-release",
+            "displayName": "Thingy52 Release",
+            "description": "Release configuration for the Thingy52 board.",
+            "inherits": "thingy52-nrf52832-common",
+            "cacheVariables": {
+                "FILE_SUFFIX": "release"
+            }
         }
     ],
     "buildPresets": [
@@ -69,6 +99,16 @@
             "name": "nrf52840dk-debug",
             "displayName": "Debug",
             "configurePreset": "nrf52840dk-debug"
+        },
+        {
+            "name": "thingy52-nrf52832-release",
+            "displayName": "Release",
+            "configurePreset": "thingy52-nrf52832-release"
+        },
+        {
+            "name": "thingy52-nrf52832-debug",
+            "displayName": "Debug",
+            "configurePreset": "thingy52-nrf52832-debug"
         }
     ],
     "testPresets": [
