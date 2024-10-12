@@ -63,10 +63,24 @@
             "problemMatcher": []
         },
         {
-            "label": "Generate Documentation (CMake)",
             "type": "shell",
+            "label": "Generate Documentation (CMake)",
             "command": "cmake --build ${command:cmake.buildDirectory} --target docs",
             "detail": "Generates the documentation using Doxygen.",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Menuconfig (West)",
+            "command": "west build --build-dir ${command:cmake.buildDirectory} -t menuconfig",
+            "detail": "Open the Kconfig interactive CLI.",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Guiconfig (West)",
+            "command": "west build --build-dir ${command:cmake.buildDirectory} -t guiconfig",
+            "detail": "Open the Kconfig interactive GUI.",
             "problemMatcher": []
         },
     ]
