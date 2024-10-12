@@ -12,7 +12,7 @@ set_target_properties(${LIB_TARGET} PROPERTIES
 # Source files ##################################
 
 target_sources(${LIB_TARGET}
-  PRIVATE
+  PUBLIC
     testlibrary.cpp
 )
 

@@ -1,6 +1,8 @@
 #ifndef MYPROJECT_TESTLIBRARY_H
 #define MYPROJECT_TESTLIBRARY_H
 
+#include <stdint.h>
+
 namespace testlib {
 
 /**
@@ -8,7 +10,7 @@ namespace testlib {
  *
  * @param input Integer number. It must be non-negative.
  */
-int factorial(int input) noexcept;
+uint32_t factorial(uint32_t input) noexcept;
 
 }  // namespace testlib
 
