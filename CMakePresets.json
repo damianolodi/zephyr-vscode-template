@@ -39,8 +39,7 @@
             "hidden": true,
             "inherits": "unix-common",
             "cacheVariables": {
-                "BOARD": "nrf52840dk/nrf52840",
-                "CONF_FILE": "conf/prj.conf"
+                "BOARD": "nrf52840dk/nrf52840"
             },
             "environment": {
                 "CORTEX_DEBUG_DEVICE": "nRF52840_xxAA"
@@ -52,8 +51,7 @@
             "description": "Debug configuration for the nRF52840-DK board.",
             "inherits": "nrf52840dk-common",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "OVERLAY_CONFIG": "conf/debug.conf"
+                "FILE_SUFFIX": "debug"
             }
         },
         {
@@ -62,7 +60,7 @@
             "description": "Release configuration for the nRF52840-DK board.",
             "inherits": "nrf52840dk-common",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+                "FILE_SUFFIX": "release"
             }
         }
     ],
