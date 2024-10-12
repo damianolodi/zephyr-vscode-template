@@ -19,3 +19,5 @@ project(zephyr-template
 include(BuildTargets)
 
 add_subdirectory(src)
+
+include(Tooling)
