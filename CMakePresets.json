@@ -8,9 +8,7 @@
             "binaryDir": "${sourceDir}/build/${presetName}",
             "installDir": "${sourceDir}/build/install/${presetName}",
             "cacheVariables": {
-                "BUILD_SHARED_LIBS": "OFF",
-                "CMAKE_MODULE_PATH": "${sourceDir}/cmake",
-                "CMAKE_POSITION_INDEPENDENT_CODE": "ON"
+                "CMAKE_MODULE_PATH": "${sourceDir}/cmake"
             }
         },
         {
@@ -27,10 +25,7 @@
                     "Darwin"
                 ]
             },
-            "cacheVariables": {
-                "USE_SANITIZER": "",
-                "XPACK_GLOBAL_DIR": "$env{HOME}/.local/xPacks"
-            }
+            "cacheVariables": {}
         },
         {
             "name": "nrf52840dk-common",
