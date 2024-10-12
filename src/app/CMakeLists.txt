@@ -10,5 +10,5 @@ target_link_libraries(${APP_TARGET} PRIVATE ${LIB_TARGET})
 
 target_sources(${APP_TARGET}
 	PRIVATE
-		main.c 
+		main.cpp 
 )

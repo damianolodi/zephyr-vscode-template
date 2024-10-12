@@ -1,7 +1,8 @@
-#include <zephyr/drivers/gpio.h>
-#include <zephyr/kernel.h>
+#include "testlibrary/testlibrary.hpp"
+#include "zephyr/drivers/gpio.h"
+#include "zephyr/kernel.h"
 
-#define SLEEP_TIME_MS 100
+constexpr int32_t SLEEP_TIME_MS = 100;
 
 #define LED0_NODE DT_ALIAS(led0)
 
@@ -18,7 +19,7 @@ int main() {
         return 1;
     }
 
-    while (1) {
+    while (true) {
         ret = gpio_pin_toggle_dt(&led);
         if (ret < 0) {
             return 1;
