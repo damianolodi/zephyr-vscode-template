@@ -11,6 +11,7 @@ The source code for this project [can be found on Github](https://github.com/dam
 - [Getting Started](#getting-started)
     - [Dependencies](#dependencies)
     - [Getting the Source](#getting-the-source)
+        - [Template Duplication](#template-duplication)
         - [Cloning with West](#cloning-with-west)
         - [Cloning with Git](#cloning-with-git)
     - [Dependency Management](#dependency-management)
@@ -35,13 +36,11 @@ The source code for this project [can be found on Github](https://github.com/dam
 
 ## About the Project
 
-The necessity for this template ...
-Other than being a working Zephyr template, this is the author's personal template. For this reason the proje
+The necessity for this template originate from the lack of feature-rich templates dedicated to Zephyr RTOS. While it is very easy to find simple project skeletons, the normal developer workflow consists of much more than a single `CMakeLists.txt` repo.
 
-Here you can provide more details about the project
-* What features does your project provide?
-* Short motivation for the project? (Don't be too long winded)
-* Links to the project site
+With this template, the author hopes to share a rather complete developer environment, with features that spans from repository configuration to complete integration with the Visual Studio Code editor.
+
+Other than being a working Zephyr template, this is the author's personal template. This is by no mean a complete or perfect working environment: it simply is the template that best suites the author's need and workflow.
 
 **[Back to top](#table-of-contents)**
 
@@ -49,7 +48,7 @@ Here you can provide more details about the project
 
 This project is the author's personal template. For this reason, the project is under constant development and it is subject to change following the author's workflow and workspace preferences.
 
-Nonetheless, the template should be in a working state at every commit and you should be abel to use the template whenever you need it.
+Nonetheless, the template should be in a working state at every commit and you should be able to use the template whenever you need it.
 
 There are no planned releases or a defined release cycle.
 
@@ -76,6 +75,14 @@ Follow the official guide for more information about the installation process.
 ### Getting the Source
 
 The source code can be either cloned using `git` or using `west`.
+
+#### Template Duplication
+
+The project source code is [stored on Github](https://github.com/damianolodi/zephyr-vscode-template). The repo is marked as template, so that a green *Use this template* button is available in the top-right of the page.
+
+Using this button, Github will create a new repository (with its own history) in the user account.
+
+> **IMPORTANT:** if you decide to move to the following sections without using the template button, remember to *delete the `.git` directory in the project folder and re-initialize a new repo using the `git init` command.*
 
 #### Cloning with West
 
@@ -183,7 +190,6 @@ In the following, each feature is described in detail.
 
 ### VSCode Configuration
 
-
 #### Recommended Extensions
 
 The VSCode integration requires some extensions to work properly. The list of all the author's recommended extensions is stored in `.vscode/extensions.json`.
@@ -222,7 +228,29 @@ A list of author's favorite snippet is stored in `.vscode/snippets.code-snippets
 
 #### Git LFS
 
+The Git LFS configuration file (`.gitattributes`) is already provided, filled with the most common files extensions. Nonetheless, when Git LFS is required in the repo, it must be initialized by the user.
+
+```bash
+git lfs install
+```
+
+If not required, feel free to delete the `.gitattributes` file. More detailed informations are [available in the documentation](https://git-lfs.com/).
+
 #### Conventional Commits
+
+When creating commits, the authors preference is following the *[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)* standard. To avoid accidental errors in commit messages, the standard can be enforced using pre-commit Git hooks.
+
+Quick and easy Git hook setup for this repo is provided by [husky](https://typicode.github.io/husky/), and *npm* package. After installing *npm*, follow this instructions to enforce the *Conventional Commits.*
+
+```bash
+# Move into the tools folder
+cd <project_directory>/tools
+
+# Install dependencies and initialize hooks
+npm install
+```
+
+The *npm* package that enforces the commit standard is called [commitlint](https://commitlint.js.org/), while its configuration is stored into `tools/commitlint.config.js`. Follow the documentation to customize the configuration.
 
 **[Back to top](#table-of-contents)**
 
@@ -248,6 +276,8 @@ At the time of writing, no other analyzer is supported.
 
 ### Doxygen Support
 
+TBC.
+
 **[Back to top](#table-of-contents)**
 
 ## Contributing
@@ -260,7 +290,10 @@ Nonetheless, if you spot any error or you have ideas on how to improve the templ
 
 ## Further Reading
 
-TBC
+When possible, links to the used tools have been added. In the following, a collection of related and useful websites is provided:
+
+- [Documentation for the Zephyr RTOS](https://docs.zephyrproject.org/latest/index.html)
+- [Devicetree Standard Specification](https://www.devicetree.org/)
 
 **[Back to top](#table-of-contents)**
 
@@ -268,11 +301,11 @@ TBC
 
 Copyright (c) 2024 [Damiano Lodi](https://www.damianolodi.com/)
 
-This project is licensed under the XXXXXX License - see [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) file for details.
 
 > **TL;DR**
-> - You **can** take any piece of this template and modify it to make it suits your workflow and preferences.
-> - You **cannot** take this exact template and say it is yours.
-> - If you use part of this template for a public project and you want to mention this repo, it will be greatly appreciated.
+> - :white_check_mark: You **can** take any piece of this template and modify it to make it suits your workflow and preferences.
+> - :x: You **cannot** take this exact template and say it is yours.
+> - :pray: If you use part of this template for a public project and you want to mention this repo, it will be greatly appreciated.
 
 **[Back to top](#table-of-contents)**
